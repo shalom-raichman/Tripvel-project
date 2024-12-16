@@ -1,0 +1,6 @@
+.inp-style {
+  display: 'flex';
+  flex-direction: 'column';
+  max-width: '300px';
+  padding: '1em';
+}
