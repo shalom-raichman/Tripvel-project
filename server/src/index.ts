@@ -8,16 +8,23 @@ const app = express()
 
 connectToMongo()
 
-app.use(cors())
+app.use(
+  cors({
+    origin: '*',
+    methods: '*',
+  })
+)
 app.use(express.json())
 
 app.use('/api/expense', expenseRouter)
 
-app.use('/api/stting', settingsRouter)
+app.use('/api/settings', settingsRouter)
 
 // error handling
-app.use(async (req: Request, res: Response) => {})
+app.use(async (req: Request, res: Response) => {
+  res.send()
+})
 
-app.listen(3000, ()=> {
+app.listen(3000, () => {
   console.log(`[Server] is up and runing no port 3000`)
 })
