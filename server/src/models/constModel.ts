@@ -8,4 +8,6 @@ const constSchema = new Schema(
   { timestamps: true }
 )
 
-export const ConstModel = model('Const', constSchema)
+export type Const = ReturnType<() => typeof constSchema>
+
+export const ConstModel = model<Const>('Const', constSchema)
